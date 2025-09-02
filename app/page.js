@@ -1,25 +1,19 @@
-import { useState } from 'react';
+import LikeButton from './like-button';
 function Header({james}) {
 return <h1>{james ? james : 'Default title'}</h1>;
 }
 
 export default function HomePage(){
 const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-const [likes, setLikes] = useState(0);
 
-function handleClick(){
-setLikes(likes + 1);
-}
-return <div>
-    <Header title="Develop. Preview. Ship." />
+return (<div>
+    <Header james="Develop. Preview. Ship." />
     <ul>
         {names.map((name) => (
         <li key={name}>{name}</li>
         ))}
     </ul>
-    <button onClick={handleClick}>Like({likes})</button>
+    <LikeButton />
 </div>
+);
 }
-
-root.render(
-<HomePage />);
