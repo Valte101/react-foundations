@@ -9,13 +9,21 @@
     <script type="text/jsx">
         const lebron = document.getElementById('lebron');
 
-        function Header() {
-            return <h1>Develop. Preview. Ship.</h1>;
+        function Header({james}) {
+            console.log(james);
+            return <h1>{james ? james : 'Default title'}</h1>;
         }
         function HomePage(){
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
             return <div>
-                <Header />
-            </div>
+                <Header title="Develop. Preview. Ship." />
+                <ul>
+                    {names.map((name) => (
+                        <li key={name}>{name}</li>
+                    ))}
+                  </ul>
+                    </div>
         }
         const root = ReactDOM.createRoot(lebron);
         root.render(<HomePage />);
