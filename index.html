@@ -8,8 +8,17 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
         const lebron = document.getElementById('lebron');
+
+        function Header() {
+            return <h1>Develop. Preview. Ship.</h1>;
+        }
+        function HomePage(){
+            return <div>
+                <Header />
+            </div>
+        }
         const root = ReactDOM.createRoot(lebron);
-        root.render(<h1>Develop. Preview. Ship.</h1>);
+        root.render(<HomePage />);
     </script>
 </body>
 
